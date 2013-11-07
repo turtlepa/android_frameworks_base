@@ -3803,6 +3803,13 @@ public final class Settings {
         public static final String CALL_UI_IN_BACKGROUND = "call_ui_in_background";
 
         /**
+         * Network activity arrows
+         *
+         * @hide
+         */
+        public static final String NETWORK_ACTIVITY_ARROWS = "network_activity_arrows";
+
+        /**
          * Whether incomming call UI stays in background and shows as heads up notification
          *
          * @hide
