@@ -2930,6 +2930,12 @@ public final class Settings {
         public static final String STATUS_BAR_NETWORK_HIDE = "status_bar_network_hide";
 
         /**
+         * Network stats Color style
+         * @hide
+         */
+        public static final String STATUS_BAR_NETWORK_COLOR = "status_bar_network_usage_color";   
+
+        /**
          * Volume rocker wake
          * @hide
          */
