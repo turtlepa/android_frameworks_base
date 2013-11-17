@@ -92,6 +92,8 @@ public class NetworkStatsView extends LinearLayout {
                     Settings.System.STATUS_BAR_NETWORK_STATS_UPDATE_INTERVAL), false, this);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_NETWORK_HIDE), false, this);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.STATUS_BAR_NETWORK_COLOR), false, this);
             onChange(true);
         }
 
@@ -116,6 +118,22 @@ public class NetworkStatsView extends LinearLayout {
 
             mRefreshInterval = Settings.System.getLong(mContext.getContentResolver(),
                     Settings.System.STATUS_BAR_NETWORK_STATS_UPDATE_INTERVAL, 500);
+
+      // Custom colors
+      int defaultColor = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.STATUS_BAR_NETWORK_COLOR, 0xFF33b5e5);
+
+      int mStatusBarNetworkColor = Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.STATUS_BAR_NETWORK_COLOR, -2);
+
+      if (mStatusBarNetworkColor == Integer.MIN_VALUE
+                || mStatusBarNetworkColor == -2) {
+                // flag to reset the color
+                mStatusBarNetworkColor = defaultColor;
+            }
+
+      mTextViewTx.setTextColor(mStatusBarNetworkColor);
+            mTextViewRx.setTextColor(mStatusBarNetworkColor);
 
             mNetStatsHide = (Settings.System.getInt(mContext.getContentResolver(),
                     Settings.System.STATUS_BAR_NETWORK_HIDE, 1) == 1);
