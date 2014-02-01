@@ -3810,7 +3810,7 @@ public final class Settings {
          * Turn screen on when device is pulled out of pocket
          * @hide
          */
-        public static final String POCKET_MODE = "pocket_mode";
+        public static final String LOCKSCREEN_NOTIFICATIONS_POCKET_MODE = "lockscreen_notifications_pocket_mode";
 
         /**
          * Wakes the device when a new notifications is received
@@ -3818,6 +3818,13 @@ public final class Settings {
          */
         public static final String LOCKSCREEN_NOTIFICATIONS_WAKE_ON_NOTIFICATION =
                 "lockscreen_notifications_wake_on_notification";
+
+        /**
+         * Privacy Mode Option
+         * @hide
+         */
+        public static final String LOCKSCREEN_NOTIFICATIONS_PRIVACY_MODE =
+                "lockscreen_notifications_privacy_mode";
 
         /**
          * Sets the count of notifications shown at once

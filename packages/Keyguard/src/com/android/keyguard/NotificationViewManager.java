@@ -42,7 +42,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.android.internal.widget.LockPatternUtils;
-import com.android.internal.util.slim.QuietHoursHelper;
 
 public class NotificationViewManager {
     private final static String TAG = "Keyguard:NotificationViewManager";
@@ -79,6 +78,7 @@ public class NotificationViewManager {
         public boolean hideNonClearable = false;
         public boolean dismissAll = true;
         public boolean wakeOnNotification = false;
+        public boolean privacyMode = true;
         public int notificationsHeight = 4;
         public float offsetTop = 0.3f;
         public int notificationColor = 0x55555555;
@@ -94,6 +94,8 @@ public class NotificationViewManager {
                     Settings.System.POCKET_MODE), false, this);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.LOCKSCREEN_NOTIFICATIONS_WAKE_ON_NOTIFICATION), false, this);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.LOCKSCREEN_NOTIFICATIONS_PRIVACY_MODE), false, this);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.LOCKSCREEN_NOTIFICATIONS_HEIGHT), false, this);
             resolver.registerContentObserver(Settings.System.getUriFor(
@@ -128,6 +130,9 @@ public class NotificationViewManager {
             wakeOnNotification = Settings.System.getIntForUser(mContext.getContentResolver(),
                     Settings.System.LOCKSCREEN_NOTIFICATIONS_WAKE_ON_NOTIFICATION,
                     wakeOnNotification ? 1 : 0, UserHandle.USER_CURRENT) == 1;
+            privacyMode = Settings.System.getIntForUser(mContext.getContentResolver(),
+                    Settings.System.LOCKSCREEN_NOTIFICATIONS_PRIVACY_MODE,
+                    privacyMode ? 1 : 0, UserHandle.USER_CURRENT) == 1;
             notificationsHeight = Settings.System.getIntForUser(mContext.getContentResolver(),
                     Settings.System.LOCKSCREEN_NOTIFICATIONS_HEIGHT,
                     notificationsHeight, UserHandle.USER_CURRENT);
@@ -165,9 +170,12 @@ public class NotificationViewManager {
         boolean shakeSecureEnabled = Settings.Secure.getIntForUser(context.getContentResolver(),
                     Settings.Secure.LOCK_SHAKE_TEMP_SECURE, 0, UserHandle.USER_CURRENT) == 1;
 
+        boolean privacyModeEnabled = Settings.System.getIntForUser(context.getContentResolver(),
+                    Settings.System.LOCKSCREEN_NOTIFICATIONS_PRIVACY_MODE, 1, UserHandle.USER_CURRENT) == 1;
+
         if (mLockPatternUtils.isSecure() && shakeSecureEnabled && securityBypassed) {
             return false;
-        } else if (mLockPatternUtils.isSecure()) {
+        } else if (mLockPatternUtils.isSecure() && privacyModeEnabled){
             return true;
         } else {
             return false;
@@ -182,8 +190,8 @@ public class NotificationViewManager {
                         if (config.pocketMode && mTimeCovered != 0 && (config.showAlways
                                 || mHostView.getNotificationCount() > 0)
                                 && System.currentTimeMillis() - mTimeCovered > MIN_TIME_COVERED
-                                && !QuietHoursHelper.inQuietHours(
-                                mContext, Settings.System.QUIET_HOURS_DIM)) {
+                                && Settings.System.getInt(mContext.getContentResolver(),
+                                Settings.System.QUIET_HOURS_DIM, 0) != 2) {
                             wakeDevice();
                             mWokenByPocketMode = true;
                             mHostView.showAllNotifications();
