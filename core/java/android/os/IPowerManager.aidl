@@ -57,4 +57,6 @@ interface IPowerManager
     void cpuBoost(int duration);
 
     void setKeyboardVisibility(boolean visible);
+
+    void wakeUpWithProximityCheck(long time);
 }
