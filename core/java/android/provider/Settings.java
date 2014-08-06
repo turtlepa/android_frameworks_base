@@ -3602,6 +3602,13 @@ public final class Settings {
         public static final String HEADS_UP_MASTER_SWITCH = "heads_up_master_switch";
 
         /**
+         * Heads up: Option to exclude from lockscreen, default is 0 (off).
+         *
+         * @hide
+         */
+        public static final String HEADS_UP_EXCLUDE_FROM_LOCK_SCREEN = "heads_up_exclude_from_lock_screen";
+
+        /**
          * Whether heads up notification is shown on the bottom of the screen (default = disabled)
          *
          * @hide
