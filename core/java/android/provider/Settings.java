@@ -3588,6 +3588,13 @@ public final class Settings {
                 "notification_shortcuts_color_mode";
 
         /**
+         * Heads Up Master Switch
+         *
+         * @hide
+         */
+        public static final String HEADS_UP_MASTER_SWITCH = "heads_up_master_switch";
+
+        /**
          * Whether heads up notification is shown on the bottom of the screen (default = disabled)
          *
          * @hide
