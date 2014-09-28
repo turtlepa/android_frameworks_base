@@ -91,7 +91,7 @@ public class NotificationViewManager {
         void observe() {
             ContentResolver resolver = mContext.getContentResolver();
             resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.POCKET_MODE), false, this);
+                    Settings.System.LOCKSCREEN_NOTIFICATIONS_POCKET_MODE), false, this);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.LOCKSCREEN_NOTIFICATIONS_WAKE_ON_NOTIFICATION), false, this);
             resolver.registerContentObserver(Settings.System.getUriFor(
@@ -116,7 +116,7 @@ public class NotificationViewManager {
         private void updateSettings() {
 
             int pocketModeVal = Settings.System.getIntForUser(mContext.getContentResolver(),
-                    Settings.System.POCKET_MODE, 2, UserHandle.USER_CURRENT);
+                    Settings.System.LOCKSCREEN_NOTIFICATIONS_POCKET_MODE, 2, UserHandle.USER_CURRENT);
             if (pocketModeVal == 0) {
                 pocketMode = true;
                 showAlways = true;
