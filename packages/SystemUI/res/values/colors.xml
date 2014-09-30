@@ -78,4 +78,6 @@
     <!-- Used by selector -->
     <color name="card_pressed">#7e3c3c3c</color>
 
+    <!-- Used by Heads Up -->
+    <color name="trds_text">@android:color/trds_text</color>
 </resources>

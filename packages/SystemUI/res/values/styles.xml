@@ -225,4 +225,16 @@
         <item name="android:popupMenuStyle">@*android:style/Widget.Holo.Light.ListPopupWindow</item>
     </style>
 
+    <style name="Theme.Holo.Dialog.Alert.Styled"  parent="@*android:style/Theme.Holo.Dialog.Alert">
+    </style>
+
+    <style name="Theme.Holo.Panel.Styled"  parent="@android:style/Theme.Holo.Panel">
+    </style>
+
+    <style name="Theme.Holo.Dialog.NoActionBar.Styled"  parent="@android:style/Theme.Holo.Dialog.NoActionBar">
+    </style>
+
+    <style name="Theme.Black.NoTitleBar.Fullscreen.Styled"  parent="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+    </style>
+
 </resources>

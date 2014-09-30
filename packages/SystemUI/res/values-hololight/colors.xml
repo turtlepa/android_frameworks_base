@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright 2010, The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<resources>
+    <color name="notification_panel_solid_background">#ffffffff</color>
+    <drawable name="status_bar_recents_app_thumbnail_background">#88ffffff</drawable>
+    <color name="status_bar_recents_app_label_color">#ff000000</color>
+    <drawable name="status_bar_notification_row_background_color">#fff6f6f6</drawable>
+    <color name="notification_list_shadow_top">#80ffffff</color>
+    <drawable name="recents_callout_line">#99000000</drawable>
+    <drawable name="notification_item_background_legacy_color">#ff555555</drawable>
+    <drawable name="notification_header_bg">#FFFFFFFF</drawable>
+    <drawable name="reminder_bg_pressed">#FFE6E6E6</drawable>
+    <color name="notification_panel_scrim_color">#B0FFFFFF</color>
+
+    <!-- Notification Shortcuts -->
+    <drawable name="notification_shortcut_background_color">#00000000</drawable>
+    <drawable name="notification_item_background_color">#ffeeeeee</drawable>
+    <drawable name="notification_item_background_color_pressed">#ff555555</drawable>
+    <color name="notification_shortcut_color">#FF000000</color>
+
+    <!-- Navigation ring -->
+    <color name="navring_system_icon_default_color">#FFFFFFFF</color>
+
+    <!-- Quick Settings -->
+    <color name="qs_background_color">#FFDEDEDE</color>
+    <color name="qs_background_pressed_color">#FFE9E9E9</color>
+
+    <!-- Pie controls -->
+    <color name="pie_overlay_color">#ffffffff</color>
+    <color name="pie_snap_color">#ff000000</color>
+    <color name="pie_text_color">#ff000000</color>
+    <color name="pie_foreground_color">#ff000000</color>
+    <color name="pie_background_color">#ffffffff</color>
+    <color name="pie_selected_color">#ffa3a3a3</color>
+    <color name="pie_long_pressed_color">#ff737373</color>
+    <color name="pie_outline_color">#ffa3a3a3</color>
+
+</resources>

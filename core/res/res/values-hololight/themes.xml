@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2006 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<!--
+===============================================================
+                        PLEASE READ
+===============================================================
+
+The Holo themes must not be modified in order to pass CTS.
+Many related themes and styles depend on other values defined in this file.
+If you would like to provide custom themes and styles for your device,
+please see themes_device_defaults.xml.
+
+===============================================================
+                        PLEASE READ
+===============================================================
+ -->
+<resources>
+    <!--
+    commenting out the following section for now. Causes all apps pulling
+        themes from framework to go along with TRLS state. Looks nice on some
+        apps, but renders app-specific resources (which would normally be white)
+        unreadable.
+    <style name="Theme.Holo.Panel" parent="Theme.Holo.Light.Panel">
+    </style>
+    <style name="Theme.Holo.SearchBar" parent="Theme.Holo.Light.SearchBar">
+    </style>
+    <style name="Theme.Holo.CompactMenu" parent="Theme.Holo.Light.CompactMenu">
+    </style>
+    <style name="Theme.Holo" parent="Theme.Holo.Light">
+    </style>
+    <style name="Theme.Holo.NoActionBar" parent="Theme.Holo.Light.NoActionBar">
+    </style>
+    <style name="Theme.Holo.NoActionBar.Fullscreen" parent="Theme.Holo.Light.NoActionBar.Fullscreen">
+    </style>
+    <style name="Theme.Holo.NoActionBar.Overscan" parent="Theme.Holo.Light.NoActionBar.Overscan">
+    </style>
+    <style name="Theme.Holo.NoActionBar.TranslucentDecor" parent="Theme.Holo.Light.NoActionBar.TranslucentDecor">
+    </style>
+    -->
+
+    <!-- system-wide dialogs should use light theme for TRLS -->
+    <style name="Theme.Holo.Dialog" parent="Theme.Holo.Light.Dialog">
+    </style>
+    <style name="Theme.Holo.Dialog.MinWidth" parent="Theme.Holo.Light.Dialog.MinWidth">
+    </style>
+    <style name="Theme.Holo.Dialog.NoActionBar" parent="Theme.Holo.Light.Dialog.NoActionBar">
+    </style>
+    <style name="Theme.Holo.Dialog.NoActionBar.MinWidth" parent="Theme.Holo.Light.Dialog.NoActionBar.MinWidth">
+    </style>
+    <style name="Theme.Holo.Dialog.FixedSize" parent="Theme.Holo.Light.Dialog.FixedSize">
+    </style>
+    <style name="Theme.Holo.Dialog.NoActionBar.FixedSize" parent="Theme.Holo.Light.Dialog.NoActionBar.FixedSize">
+    </style>
+    <style name="Theme.Holo.Dialog.Alert" parent="Theme.Holo.Light.Dialog.Alert">
+    </style>
+    <style name="Theme.Holo.DialogWhenLarge" parent="Theme.Holo.Light.DialogWhenLarge">
+    </style>
+    <style name="Theme.Holo.DialogWhenLarge.NoActionBar" parent="Theme.Holo.Light.DialogWhenLarge.NoActionBar">
+    </style>
+    <style name="Theme.Holo.Dialog.Presentation" parent="Theme.Holo.Light.Dialog.Presentation">
+    </style>
+
+    <!-- Redirected themes from manifest for TRLS -->
+    <style name="Theme.Holo.Dialog.Alert.Styled" parent="@style/Theme.Holo.Light.Dialog.Alert" >
+    </style>
+    <style name="Theme.Holo.Dialog.Styled1" parent="@style/Theme.Holo.Light.Dialog" >
+    </style>
+    <style name="Theme.Holo.Dialog.Styled2" parent="@android:style/Theme.Holo.Light.Dialog" >
+    </style>
+    <style name="Theme.Holo.Dialog.NoActionBar.Styled" parent="@android:style/Theme.Holo.Light.Dialog.NoActionBar" >
+    </style>
+    <style name="Theme.Holo.DialogWhenLarge.Styled" parent="@android:style/Theme.Holo.Light.DialogWhenLarge" >
+    </style>
+</resources>
